@@ -1,6 +1,5 @@
 //react stuff
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-//import Cookies from 'universal-cookie';
 
 import './App.css';
 import Home from './Home/home';
@@ -15,11 +14,6 @@ const App = () => {
   <style>
     @import url('https://fonts.googleapis.com/css2?family=DM+Serif+Display&display=swap');
   </style>
-
-  /*const cookies = new Cookies();
-  cookies.set('myCat', 'Pacman', { path: '/' });
-  console.log(cookies.get('myCat'));
-*/
 
 
   return (
