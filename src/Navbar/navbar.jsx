@@ -1,6 +1,7 @@
 import styled from "styled-components";
 import { useHistory } from "react-router";
-
+import { useState } from "react";
+import { FaBars } from 'react-icons/fa';
 
 const Bar = styled.div`
   height: 14vh;
@@ -10,7 +11,18 @@ const Bar = styled.div`
   justify-content: space-between;
   position: sticky;
 `;
-
+/*const List = styled.li`
+  margin-bottom: 2rem;
+  text-decoration: uppercase;
+  list-style-type: none;
+`;
+const Unordered = styled.ul`
+margin-bottom: 2rem;
+  text-decoration: uppercase;
+  list-style-type: none;
+  display: block;
+  text-align: center;
+`*/
 const Words = styled.h4`
   font-size: 2rem;
   color: rgb(183, 174, 157);
@@ -54,6 +66,7 @@ const A = styled.a`
 
 const Navbar = () => {
 
+
   const history = useHistory();
 
   const navToStylists = () => {
@@ -72,15 +85,22 @@ const Navbar = () => {
     history.push("/appointments");
   };
 
+  const [open, setOpen] = useState(false);
+  const toggle = () => setOpen(!open)
+
   return (
-    <Bar>
-      <Words onClick={navToHome}><A href="#home">Home</A></Words>
-      <Words onClick={navToStylists}><A href="#stylists">Stylists</A></Words>
-      <Words onClick={navToInspo}><A href="#inspo">Inspiration</A></Words>
-      <Words onClick={navToPricing}><A href="#price">Pricing</A></Words>
-      <Words onClick={navToAppointments}><A href="#appointments">Appointments</A></Words>
-    </Bar>
+    <>
+      <FaBars role={'button'} onKeyPress={() => toggle(!open)} onClick={() => toggle(!open)} className={"menu-icon"}>
+        <Bar>
+          <Words onClick={navToHome}><A href="#home">Home</A></Words>
+          <Words onClick={navToStylists}><A href="#stylists">Stylists</A></Words>
+          <Words onClick={navToInspo}><A href="#inspo">Inspiration</A></Words>
+          <Words onClick={navToPricing}><A href="#price">Pricing</A></Words>
+          <Words onClick={navToAppointments}><A href="#appointments">Appointments</A></Words>
+        </Bar>
+      </FaBars>
+    </>
   )
-};
+}
 
 export default Navbar;

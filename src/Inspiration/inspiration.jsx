@@ -1,28 +1,25 @@
 // components
 import styled from 'styled-components';
-import Navbar from '../Navbar/navbar';
 
 
 //assets
 
-import harperash from '../Assets/harperash.jpg'
+import harper from '../Assets/harperash.jpg'
+import zero from '../Assets/zero.jpg'
+import one from '../Assets/one.jpg'
+import two from '../Assets/two.jpg'
+import three from '../Assets/three.jpg'
+import four from '../Assets/four.jpg'
+import five from '../Assets/five.jpg'
+import six from '../Assets/six.jpg'
+import seven from '../Assets/seven.jpg'
 
-
-
-const Img = styled.img`
-height: 25vh;
-width: auto;
-margin: 10px auto;
-padding: 25px;
-float: left;
-`;
-const Photo = styled.img`
+const Photo = styled.div`
 animation: fadeIn .8s, scaleCenter .8s;
 height: 25vh;
 width: auto;
 margin: 10px auto;
 padding: 25px;
-float: left;
 `;
 const Divide = styled.div`
 display: flex;
@@ -42,19 +39,22 @@ text-indent: 50px;
 
 const Inspiration = () => {
 
-    const Photos = [
-        { image: { harperash } },
-        { name: "", text: "hair", image: "https://www.instagram.com/p/CQRe1IFHmJ8/" },
-        { name: "", text: "special occasion", image: "https://www.instagram.com/p/COQpJVAnhKm/" },
-        { name: "", text: "redhead", image: "https://www.instagram.com/p/CNDSoLaH9zK/" },
-        { name: "", text: "salon", image: "https://www.instagram.com/p/CJbdl33HRve/" },
-        { name: "", text: "book now", image: "https://www.instagram.com/p/CKAXN5eHLNc/" },
-    ]
+
 
     return (
         <>
             <Divide id="inspo">
-
+                <Photo src={harper} />
+                <Info>Whether you want to be a blond bombshell or a fiery redhead we've got you covered.</Info>
+                <Photo src={zero} />
+                <Info>Need some inspiration?</Info>
+                <Photo src={one} />
+                <Photo src={two} />
+                <Photo src={three} />
+                <Photo src={four} />
+                <Photo src={five} />
+                <Photo src={six} />
+                <Photo src={seven} />
             </Divide>
         </>
     )

@@ -12,6 +12,7 @@ import Inspiration from '../Inspiration/inspiration';
 import Pricing from '../Pricing/pricing';
 import Appointments from '../Appointments/appointments';
 import Footer from '../Footer/footer';
+import lights from '../Assets/OOOHlights.jpg'
 
 //assets
 
@@ -46,14 +47,13 @@ initial-letter: 3;
 const Home = () => {
     //const history = useHistory();
 
-
     return (
         <>
             <Navbar />
             <Divide>
                 <Img src={harperash} alt='harper ash logo' id="home" />
             </Divide>
-            <Divide>
+            <Divide style={{ backgroundImage: `${lights}`, opacity: 0.3 }}>
                 <Info>
                     Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Sem fringilla ut morbi tincidunt.
                     Velit sed ullamcorper morbi tincidunt ornare massa. Ornare arcu dui vivamus arcu felis bibendum ut tristique et. Diam donec adipiscing tristique risus nec. Ut etiam sit amet

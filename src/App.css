@@ -4,43 +4,244 @@
   color: #b7ae9d;
   font-family: 'DM Serif Display', serif;
   display: flex;
+  background-image: '../Assets/OOOHlights.jpg';
 }
+.menu-icon{
+  cursor: pointer;
+  line-height: 0;
+  font-size: 1rem;
+  color: #fff;
+  background-color: rgba(29, 20, 2, 0.753);
+  position: fixed;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 10rem;
+  height: 10rem;
+  border: 1px solid rgba(29, 20, 2, 0.753);
+  border-radius: 9999px;
+  z-index: 9999999999;
+  top: 2rem;
+  right: 2rem;
+}
+  ::active{
+    top: 2.4rem;
+    color: #ccc;
+  }
 
+
+.mobile-menu{
+  position: fixed;
+  display: flex;
+  flex-direction: column;
+  background-color: rgba(29,20,2, .80);
+  backdrop-filter: blur(3px);
+  align-items: center;
+  justify-content: center;
+  color: white;
+  font-size: larger;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  z-index: 999999999;
+  text-align: center;
+  animation: fadeIn 1s;
+}
+  ::ul li{
+    margin-bottom: 2rem;
+    text-decoration: uppercase;
+    list-style-type: none;
+  }
+  
+  ::span{
+    margin: 2rem;
+    margin-bottom: 4rem;
+    padding: .8rem;
+    border-radius: 20px;
+    float: left;
+    font-weight: bold;
+    color: rgba(29, 20, 2, 1);
+    font-size: largest;
+    background-color: rgba(75, 25, 125, 1);
+  }
+      ::hover{
+        cursor: pointer;
+      }
+  
 /*
 //dark-beige: rgb(183, 174, 157)
 //pink: rgb(246, 237, 228)
+// light-pink-beige rgb(254,224,200)
+// dark-pink-beige rgb(220, 174, 140)
+// another-pink-beige rgb(220, 173,142)
+//dark-brown rgb(79, 68, 60)
+*/
+/*/BACK TO TOP ARROW*/
+.arrow-entered{
+  z-index: 9999999;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: rgb(254,224,200);
+  padding: 2rem;
+  border: 1px solid rgb(183, 174, 157);
+  border-radius: 10px;
+  transition: all .2s;
+  cursor: pointer;
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
-}
-/* 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
+  
+  @media(max-width: 1020px){
+    border: 1px solid rgba(254,224,200, .7);
+    background-color: rgba(220, 173,142, .7);
+    bottom: 8.3rem;
+    right: 2.3rem;
+  
+  
+  .svg {
+    fill: white;
+    height: 3rem;
+    width: 3rem;
+  }
+  
+  &:hover{
+    bottom: 3.3rem;
+    box-shadow: 0 0 20px 2px rgba(71, 30, 114, 1);
+    
+      @media(max-width: 760px){
+        bottom: 8.3rem;
+        right: 2.3rem;
+      }
+  }
+  
+  &:active{
+    bottom: 3rem;
+    box-shadow: 0 0 15px 1px rgba(71, 30, 114, 1);
+    
+    @media(max-width: 760px){
+      bottom: 8.3rem;
+      right: 2.3rem;
+    }
   }
 }
+}
+.arrow-entering{
+  z-index: 999;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color: rgb(220, 174, 140);
+  padding: 2rem;
+  border: 1px solid rgb(246, 237, 228);
+  border-radius: 10px;
+  transition: all .2s;
+  cursor: pointer;
+  animation: fadeIn .5s, scaleCenter .5s;
+    
+  @media(max-width: 760px){
+    bottom: 8.3rem;
+    right: 2.3rem;
 
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
+  svg{
+    fill: white;
+    height: 3rem;
+    width: 3rem;
+  }
+  
+}
+  
+}
+
+.arrow-exiting{
+  z-index: 999;
+  position: fixed;
+  bottom: 3rem;
+  right: 3rem;
+  background-color:rgb(246, 237, 228);
+  padding: 2rem;
+  border: 1px solid rgb(220, 174, 140);
+  border-radius: 10px;
+  transition: all .2s;
+  cursor: pointer;
+  animation: fadeOut .5s, scaleOut .5s;
+  
+  @media(max-width: 760px){
+    bottom: 8.3rem;
+    right: 2.3rem;
+
+   svg{
+    fill: white;
+    height: 3rem;
+    width: 3rem;
+  }
+  
+  
+}
+}
+
+.arrow-exited{
+  display: none;
+}
+
+.social-icons{
   display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
-  color: white;
-}
-
-.App-link {
-  color: #61dafb;
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
+  position: fixed;
+  z-index: 99999;
+  bottom: 40%;
+  left: 0;
+  font-size: 3rem;
+  background-color: rgb(79, 68, 60);
+  padding: .8rem;
+  border: 1px solid rgb(254,224,200);
+  animation: fadeIn .5s;
+  border-radius: 0 5px 5px 0;
+  transition: all .1s;
+  
+  @media(max-width: 760px){
+    border-radius: 0 0 0 0;
+    width: 100%;
+    justify-content: center;
+    flex-direction: row;
+    bottom: 0;
+    left: 0;
   }
-  to {
-    transform: rotate(360deg);
+}
+/*animations*/
+@keyframes fadeout {
+  0%{opacity:1;}
+  100%{opacity:0;}
+}
+@keyframes fadein {
+  0%{opacity:0;}
+  100%{opacity:1;}
+}
+@keyframes scaleCenter {
+  from{transform: scale(.5);}
+  to{transform: scale(1);}
+}
+@keyframes scaleOut {
+  from {transform: scale(1);}
+  from {transform: scale(.5)}
+}
+@keyframes bounceIn {
+  0% {
+    opacity: 1;
+    transform: scale(.3);
+  } 
+
+  50% {
+    opacity: 1;
+    transform: scale(1.05);
+  } 
+
+  70% {
+    opacity: 1;
+    transform: scale(.9);
   }
-} */
+
+  100% {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
